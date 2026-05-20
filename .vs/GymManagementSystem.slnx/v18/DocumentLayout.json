@@ -1,12 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\MyApplications\\GymManagementSystem\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{002815F8-BC05-57F9-53E9-563088CFF918}|GymManagementSystem\\GymManagementSystem.csproj|d:\\m_fikery\\test\\gymmanagementsystem\\gymmanagementsystem\\views\\plan\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{002815F8-BC05-57F9-53E9-563088CFF918}|GymManagementSystem\\GymManagementSystem.csproj|solutionrelative:gymmanagementsystem\\views\\plan\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{002815F8-BC05-57F9-53E9-563088CFF918}|GymManagementSystem\\GymManagementSystem.csproj|d:\\m_fikery\\test\\gymmanagementsystem\\gymmanagementsystem\\views\\plan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{002815F8-BC05-57F9-53E9-563088CFF918}|GymManagementSystem\\GymManagementSystem.csproj|solutionrelative:gymmanagementsystem\\views\\plan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\Views\\Plan\\Index.cshtml",
+              "RelativeDocumentMoniker": "GymManagementSystem\\Views\\Plan\\Index.cshtml",
+              "ToolTip": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\Views\\Plan\\Index.cshtml",
+              "RelativeToolTip": "GymManagementSystem\\Views\\Plan\\Index.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAswC8AAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-20T07:59:09.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\Views\\Plan\\Details.cshtml",
+              "RelativeDocumentMoniker": "GymManagementSystem\\Views\\Plan\\Details.cshtml",
+              "ToolTip": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\Views\\Plan\\Details.cshtml",
+              "RelativeToolTip": "GymManagementSystem\\Views\\Plan\\Details.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAEcAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-20T07:57:42.82Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

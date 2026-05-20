@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj": {}
+    "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj": {}
   },
   "projects": {
-    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj": {
+    "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj",
+        "projectUniqueName": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj",
         "projectName": "GymManagementSystem",
-        "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\MohammedFekry\\.nuget\\packages\\",
-        "outputPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem\\obj\\",
+        "projectPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\MohamedFekry\\.nuget\\packages\\",
+        "outputPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MohammedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MohamedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,10 +28,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -48,6 +52,7 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
@@ -86,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

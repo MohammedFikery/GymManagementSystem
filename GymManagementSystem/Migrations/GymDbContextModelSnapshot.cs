@@ -60,9 +60,9 @@ namespace GymManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Plan", t =>
+                    b.ToTable("Plan", null, t =>
                         {
-                            t.HasCheckConstraint("CK_Plan_Duration", "Duration Between 1 and 365");
+                            t.HasCheckConstraint("CK_Plan_Duration", "Duration BETWEEN 1 AND 365");
                         });
                 });
 #pragma warning restore 612, 618

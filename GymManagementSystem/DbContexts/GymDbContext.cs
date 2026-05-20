@@ -15,6 +15,7 @@ namespace GymManagementSystem.DbContexts
         {
             modelBuilder.ApplyConfiguration<Plan>(new PlanConfig());
         }
+        public DbSet<Plan> Plans { get; set; }
 
     }
 }
