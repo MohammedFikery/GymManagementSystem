@@ -18,8 +18,10 @@ namespace GymManagementSystem.DAL.Configurations
 
             builder.Property(s => s.StartDate).IsRequired(); 
             builder.Property(s => s.EndDate).IsRequired();
+            builder.ToTable(t => t.HasCheckConstraint("CK_Session_Capacity", "Capacity Between 1 and 25"));
+            builder.ToTable(t => t.HasCheckConstraint("CK_Session_Dates", "[EndDate] > [StartDate]"));
 
-            // Relationships
+            #region Relationships
             builder.HasOne(s => s.Trainer)
                    .WithMany(t => t.Sessions)
                    .HasForeignKey(s => s.TrainerId)
@@ -30,8 +32,8 @@ namespace GymManagementSystem.DAL.Configurations
                    .HasForeignKey(s => s.CategoryId)
                    .OnDelete(DeleteBehavior.Restrict);
 
-            // Check Constraint الصحيح
-            builder.ToTable(t => t.HasCheckConstraint("CK_Session_Dates", "[EndDate] > [StartDate]"));
+            #endregion
+
         }
     }
 }

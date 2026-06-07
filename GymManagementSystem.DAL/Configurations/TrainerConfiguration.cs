@@ -9,19 +9,19 @@ using System.Text;
 
 namespace GymManagementSystem.DAL.Configurations
 {
-    public class TrainerConfiguration : IEntityTypeConfiguration<Trainer>
+    public class TrainerConfiguration : GymUserConfiguration<Trainer>
     {
-        public void Configure(EntityTypeBuilder<Trainer> builder)
+        public override void Configure(EntityTypeBuilder<Trainer> builder)
         {
-            builder.HasBaseType<GymUser>();
+            base.Configure(builder); 
+
+            builder.Property(t => t.CreatedAt)
+                   .HasDefaultValueSql("GETUTCDATE()")
+                   .IsRequired();
 
             builder.Property(t => t.Specialties)
-                   .HasConversion(
-                       v => string.Join(",", v.Select(s => s.ToString())),
-                       v => v.Split(',', StringSplitOptions.RemoveEmptyEntries)
-                             .Select(s => Enum.Parse<Specialty>(s))
-                             .ToList()
-                   );
+                   .HasMaxLength(200);
         }
     }
 }
+

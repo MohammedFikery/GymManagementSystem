@@ -33,9 +33,6 @@ namespace GymManagementSystem.DAL.Entities
         public Gender Gender { get; set; }
 
         public Address Address { get; set; } = new Address();
-
-        [MaxLength(500)]
-        public string? Photo { get; set; }
     }
 
     public class Address

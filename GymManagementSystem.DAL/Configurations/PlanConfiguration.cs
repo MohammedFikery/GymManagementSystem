@@ -15,6 +15,7 @@ namespace GymManagementSystem.DAL.Configurations
 
             builder.Property(p => p.Name)
                    .IsRequired()
+                   .HasColumnType("Nvarchar")
                    .HasMaxLength(50);
 
             builder.Property(p => p.Description)
@@ -29,6 +30,10 @@ namespace GymManagementSystem.DAL.Configurations
 
             builder.Property(p => p.IsActive)
                    .HasDefaultValue(true);
+            builder.ToTable(tb =>
+            {
+                tb.HasCheckConstraint("PlanDurationDaysCheck", "DurationDays Between 1 and 365"); 
+            });
         }
     }
 }

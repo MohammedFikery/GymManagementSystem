@@ -8,22 +8,23 @@ using System.Text;
 
 namespace GymManagementSystem.DAL.Configurations
 {
-    public class MemberConfiguration : IEntityTypeConfiguration<Member>
+    public class MemberConfiguration : GymUserConfiguration<Member>
     {
-        public void Configure(EntityTypeBuilder<Member> builder)
+        public override void Configure(EntityTypeBuilder<Member> builder)
         {
-            builder.HasBaseType<GymUser>(); 
+            base.Configure(builder); 
 
-            builder.Property(m => m.JoinDate)
-                   .HasDefaultValueSql("GETUTCDATE()");
+            builder.Property(m => m.CreatedAt)
+                   .HasDefaultValueSql("GETUTCDATE()")
+                   .IsRequired();
 
             builder.Property(m => m.Photo)
                    .HasMaxLength(500);
 
-            // Relationships
+            // One-to-One Relationship
             builder.HasOne(m => m.HealthRecord)
                    .WithOne(h => h.Member)
-                   .HasForeignKey<HealthRecord>(h => h.MemberId)
+                   .HasForeignKey<HealthRecord>(h => h.Id)
                    .OnDelete(DeleteBehavior.Cascade);
         }
     }

@@ -8,8 +8,6 @@ namespace GymManagementSystem.DAL.Models
 {
     public class Member : GymUser
     {
-        public DateTime JoinDate { get; set; } = DateTime.UtcNow;
-
         [MaxLength(500)]
         public string? Photo { get; set; }
         public HealthRecord? HealthRecord { get; set; }

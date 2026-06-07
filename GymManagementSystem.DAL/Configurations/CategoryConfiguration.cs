@@ -15,9 +15,17 @@ namespace GymManagementSystem.DAL.Configurations
 
             builder.Property(c => c.CategoryName)
                    .IsRequired()
+                   .HasColumnType("Nvarchar")
                    .HasMaxLength(20);
 
             builder.HasIndex(c => c.CategoryName).IsUnique();
+            builder.HasData(
+                            new Category { Id = 1, CategoryName = "Cardio" },
+                            new Category { Id = 2, CategoryName = "Strength" },
+                            new Category { Id = 3, CategoryName = "Yoga" },
+                            new Category { Id = 4, CategoryName = "Boxing" },
+                            new Category { Id = 5, CategoryName = "CrossFit" }
+                            );
         }
     }
 }

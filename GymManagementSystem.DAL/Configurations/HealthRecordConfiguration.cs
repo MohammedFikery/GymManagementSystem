@@ -15,7 +15,6 @@ namespace GymManagementSystem.DAL.Configurations
 
             builder.Property(h => h.Height).IsRequired();
             builder.Property(h => h.Weight).IsRequired();
-            builder.Property(h => h.LastUpdate).HasDefaultValueSql("GETDATE()");
         }
     }
 }

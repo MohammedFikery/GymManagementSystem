@@ -28,7 +28,6 @@ namespace GymManagementSystem.DbContexts
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new GymUserConfiguration());
             modelBuilder.ApplyConfiguration(new MemberConfiguration());
             modelBuilder.ApplyConfiguration(new TrainerConfiguration());
             modelBuilder.ApplyConfiguration(new PlanConfiguration());
