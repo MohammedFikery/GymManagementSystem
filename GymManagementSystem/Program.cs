@@ -1,6 +1,7 @@
-using GymManagementSystem.BLL.Repositories;
+using GymManagementSystem.DAL.Repository.Classes;
 using GymManagementSystem.DAL.Repository.Interfaces;
 using GymManagementSystem.DbContexts;
+using GymManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymManagementSystem
@@ -22,7 +23,7 @@ namespace GymManagementSystem
             });
 
             // Repository
-            builder.Services.AddScoped<IPlanRepository, PlanRepository>();
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

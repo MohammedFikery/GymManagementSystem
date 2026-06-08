@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymManagementSystem.DAL.Migrations
 {
     [DbContext(typeof(GymDbContext))]
-    [Migration("20260607083151_InitialCreate_V2")]
-    partial class InitialCreate_V2
+    [Migration("20260608083202_RalationShips")]
+    partial class RalationShips
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,35 +27,25 @@ namespace GymManagementSystem.DAL.Migrations
 
             modelBuilder.Entity("GymManagementSystem.DAL.Models.Booking", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("BookingDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETUTCDATE()");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsAttended")
-                        .HasColumnType("bit");
-
                     b.Property<int>("MemberId")
                         .HasColumnType("int");
 
                     b.Property<int>("SessionId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasColumnName("BookindDate")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<bool>("IsAttended")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("MemberId");
+                    b.HasKey("MemberId", "SessionId");
 
                     b.HasIndex("SessionId");
 
@@ -124,7 +114,10 @@ namespace GymManagementSystem.DAL.Migrations
             modelBuilder.Entity("GymManagementSystem.DAL.Models.HealthRecord", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("BloodType")
                         .HasColumnType("nvarchar(max)");
@@ -134,6 +127,9 @@ namespace GymManagementSystem.DAL.Migrations
 
                     b.Property<decimal>("Height")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("MemberId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
@@ -145,6 +141,9 @@ namespace GymManagementSystem.DAL.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MemberId")
+                        .IsUnique();
 
                     b.ToTable("HealthRecords");
                 });
@@ -213,6 +212,7 @@ namespace GymManagementSystem.DAL.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
+                        .HasColumnName("StartDate")
                         .HasDefaultValueSql("GETDATE()");
 
                     b.Property<DateTime>("EndDate")
@@ -393,7 +393,7 @@ namespace GymManagementSystem.DAL.Migrations
                     b.HasOne("GymManagementSystem.DAL.Models.Session", "Session")
                         .WithMany("Bookings")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Member");
@@ -405,7 +405,7 @@ namespace GymManagementSystem.DAL.Migrations
                 {
                     b.HasOne("GymManagementSystem.DAL.Models.Member", "Member")
                         .WithOne("HealthRecord")
-                        .HasForeignKey("GymManagementSystem.DAL.Models.HealthRecord", "Id")
+                        .HasForeignKey("GymManagementSystem.DAL.Models.HealthRecord", "MemberId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -457,7 +457,7 @@ namespace GymManagementSystem.DAL.Migrations
                     b.HasOne("GymManagementSystem.Models.Plan", "Plan")
                         .WithMany("Memberships")
                         .HasForeignKey("PlanId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Member");
@@ -470,13 +470,13 @@ namespace GymManagementSystem.DAL.Migrations
                     b.HasOne("GymManagementSystem.DAL.Models.Category", "Category")
                         .WithMany("Sessions")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("GymManagementSystem.DAL.Models.Trainer", "Trainer")
                         .WithMany("Sessions")
                         .HasForeignKey("TrainerId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");

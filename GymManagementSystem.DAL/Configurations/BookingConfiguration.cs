@@ -11,19 +11,12 @@ namespace GymManagementSystem.DAL.Configurations
     {
         public void Configure(EntityTypeBuilder<Booking> builder)
         {
-            builder.HasKey(b => b.Id);
+            builder.Ignore(b => b.Id);
+            builder.HasKey(b =>new {b.MemberId,b.SessionId});
 
-            builder.Property(b => b.BookingDate).HasDefaultValueSql("GETUTCDATE()");
-
-            builder.HasOne(b => b.Member)
-                   .WithMany(m => m.Bookings)
-                   .HasForeignKey(b => b.MemberId)
-                   .OnDelete(DeleteBehavior.Cascade);
-
-            builder.HasOne(b => b.Session)
-                   .WithMany(s => s.Bookings)
-                   .HasForeignKey(b => b.SessionId)
-                   .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(b => b.CreatedAt)
+                   .HasColumnName("BookindDate")
+                   .HasDefaultValueSql("GETDATE()");
         }
     }
 }

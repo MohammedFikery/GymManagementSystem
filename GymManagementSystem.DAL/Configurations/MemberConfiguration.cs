@@ -20,12 +20,6 @@ namespace GymManagementSystem.DAL.Configurations
 
             builder.Property(m => m.Photo)
                    .HasMaxLength(500);
-
-            // One-to-One Relationship
-            builder.HasOne(m => m.HealthRecord)
-                   .WithOne(h => h.Member)
-                   .HasForeignKey<HealthRecord>(h => h.Id)
-                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
