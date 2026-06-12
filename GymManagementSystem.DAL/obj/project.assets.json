@@ -3666,26 +3666,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MohamedFekry\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages": {},
+    "C:\\Users\\MohammedFekry\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+      "projectUniqueName": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
       "projectName": "GymManagementSystem.DAL",
-      "projectPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
-      "packagesPath": "C:\\Users\\MohamedFekry\\.nuget\\packages\\",
-      "outputPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
+      "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+      "packagesPath": "C:\\Users\\MohammedFekry\\.nuget\\packages\\",
+      "outputPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\MohamedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+        "C:\\Users\\MohammedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3694,7 +3691,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {}
+    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {}
   },
   "projects": {
-    "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {
+    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
+        "projectUniqueName": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
         "projectName": "GymManagementSystem.BLL",
-        "projectPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
-        "packagesPath": "C:\\Users\\MohamedFekry\\.nuget\\packages\\",
-        "outputPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.BLL\\obj\\",
+        "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
+        "packagesPath": "C:\\Users\\MohammedFekry\\.nuget\\packages\\",
+        "outputPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MohamedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Users\\MohammedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -28,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -36,8 +33,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
-                "projectPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj"
+              "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
+                "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj"
               }
             }
           }
@@ -352,22 +349,20 @@
         }
       }
     },
-    "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
+    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+        "projectUniqueName": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
         "projectName": "GymManagementSystem.DAL",
-        "projectPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
-        "packagesPath": "C:\\Users\\MohamedFekry\\.nuget\\packages\\",
-        "outputPath": "D:\\M_Fikery\\Test\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
+        "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+        "packagesPath": "C:\\Users\\MohammedFekry\\.nuget\\packages\\",
+        "outputPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MohamedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Users\\MohammedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -376,7 +371,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -1,0 +1,164 @@
+﻿@model CreateMemberViewModel
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+        <header class="mb-4">
+            <h3 class="text-primary-color">Add New Member</h3>
+        </header>
+
+        <form asp-controller="Member" asp-action="Create" method="post" enctype="multipart/form-data">
+
+            <!-- Tabs -->
+            <ul class="nav nav-tabs mb-4" id="addMemberTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="member-tab" data-bs-toggle="tab"
+                            data-bs-target="#member-info" type="button" role="tab">
+                        Member Info
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="health-tab" data-bs-toggle="tab"
+                            data-bs-target="#health-info" type="button" role="tab">
+                        Health Data
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <!-- Member Info Tab -->
+                <div class="tab-pane fade show active" id="member-info" role="tabpanel">
+                    <div class="section-header mb-3">
+                        <h5 class="text-primary fw-bold">Personal Information</h5>
+                        <hr class="mt-2">
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="Phone" class="form-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="DateOfBirth" class="form-label"></label>
+                            <input asp-for="DateOfBirth" type="date" class="form-control" />
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="Gender" class="form-label"></label>
+                            <select asp-for="Gender" class="form-select" asp-items="Html.GetEnumSelectList<Gender>()">
+                                <option value="">-- Select Gender --</option>
+                            </select>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="section-header mb-3 mt-4">
+                        <h5 class="text-primary fw-bold">Address Information</h5>
+                        <hr class="mt-2">
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label asp-for="BuildingNumber" class="form-label"></label>
+                            <input asp-for="BuildingNumber" class="form-control" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label asp-for="Street" class="form-label"></label>
+                            <input asp-for="Street" class="form-control" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label asp-for="City" class="form-label"></label>
+                            <input asp-for="City" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Data Tab -->
+                <div class="tab-pane fade" id="health-info" role="tabpanel">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label asp-for="HealthRecordViewModel.Height" class="form-label"></label>
+                            <input type="number" asp-for="HealthRecordViewModel.Height" class="form-control" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label asp-for="HealthRecordViewModel.Weight" class="form-label"></label>
+                            <input type="number" asp-for="HealthRecordViewModel.Weight" class="form-control" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label asp-for="HealthRecordViewModel.BloodType" class="form-label"></label>
+                            <select asp-for="HealthRecordViewModel.BloodType" class="form-select"
+                                    asp-items="Html.GetEnumSelectList<BloodType>()">
+                                <option value="">-- Select Blood Type --</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label asp-for="HealthRecordViewModel.Note" class="form-label"></label>
+                            <textarea asp-for="HealthRecordViewModel.Note" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Profile Photo -->
+            <div class="mt-4">
+                <label class="form-label">Profile Photo</label>
+                <input type="file" id="photoInput" name="Photo" class="form-control" accept="image/*" />
+                <div class="mt-3">
+                    <img id="photoPreview" src="#" alt="Preview" style="max-width: 150px; display: none;" class="img-thumbnail" />
+                </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <footer class="d-flex justify-content-end gap-3 mt-4">
+                <a asp-controller="Member" asp-action="Index" class="btn btn-outline-secondary px-4">
+                    <i class="bi bi-arrow-left me-2"></i> Back to List
+                </a>
+                <button type="submit" class="btn btn-primary px-4">
+                    <i class="bi bi-plus-circle me-2"></i> Add Member
+                </button>
+            </footer>
+
+        </form>
+    </main>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        const photoInput = document.getElementById('photoInput');
+        if (photoInput) {
+            photoInput.addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const preview = document.getElementById('photoPreview');
+                        if (preview) {
+                            preview.src = e.target.result;
+                            preview.style.display = 'block';
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    </script>
+}
