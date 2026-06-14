@@ -33,5 +33,6 @@ namespace GymManagementSystem.Controllers
 
             return View(plan);
         }
+
     }
 }

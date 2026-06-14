@@ -50,5 +50,7 @@ namespace GymManagementSystem.DAL.Repository.Classes
             return 0;
         }
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default) => await _context.Set<TEntity>().AnyAsync(predicate, ct);
+
+        public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default)=> await _context.Set<TEntity>().FirstOrDefaultAsync(predicate, ct);
     }
 }

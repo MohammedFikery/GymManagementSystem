@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GymManagementSystem.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class initalCreat : Migration
+    public partial class initalCreating : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
