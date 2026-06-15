@@ -2,8 +2,9 @@ using GymManagementSystem.BLL.Services.Classes;
 using GymManagementSystem.BLL.Services.Interfaces;
 using GymManagementSystem.DAL.Repository.Classes;
 using GymManagementSystem.DAL.Repository.Interfaces;
+using GymManagementSystem.DAL.UnitOFWork.Classes;
+using GymManagementSystem.DAL.UnitOFWork.Interfaces;
 using GymManagementSystem.DbContexts;
-using GymManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymManagementSystem
@@ -27,7 +28,7 @@ namespace GymManagementSystem
             // Repository
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped<IMemberService,MemberServices>();
-
+            builder.Services.AddScoped<IUnitOFWork, UnitOfWork>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

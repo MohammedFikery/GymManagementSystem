@@ -20,37 +20,26 @@ namespace GymManagementSystem.DAL.Repository.Classes
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync(bool tracking = false, CancellationToken ct = default)
         {
             IQueryable<TEntity> query = _dbSet;
-
             if (!tracking)
                 query = query.AsNoTracking();
-
             return await query.ToListAsync(ct);
         }
-
         public virtual async Task<TEntity?> GetByIdAsync(int id, CancellationToken ct = default)
             => await _dbSet.FirstOrDefaultAsync(e => EF.Property<int>(e, "Id") == id, ct);
-        public virtual async Task<int> AddAsync(TEntity entity, CancellationToken ct = default)
+        public void Add(TEntity entity)
         {
-            await _dbSet.AddAsync(entity, ct);
-            return await _context.SaveChangesAsync(ct);
+            _dbSet.AddAsync(entity);
         }
-        public virtual async Task<int> UpdateAsync(TEntity entity, CancellationToken ct = default)
+        public void Update(TEntity entity)
         {
             _dbSet.Update(entity);
-            return await _context.SaveChangesAsync(ct);
         }
-        public virtual async Task<int> DeleteAsync(int id, CancellationToken ct = default)
+        public void  Delete(TEntity entity)
         {
-            var entity = await _dbSet.FindAsync(new object[] { id }, ct);
-            if (entity != null)
-            {
-                _dbSet.Remove(entity);
-                await _context.SaveChangesAsync(ct);
-            }
-            return 0;
+            _dbSet.Remove(entity);
+
         }
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default) => await _context.Set<TEntity>().AnyAsync(predicate, ct);
-
         public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default)=> await _context.Set<TEntity>().FirstOrDefaultAsync(predicate, ct);
     }
 }
