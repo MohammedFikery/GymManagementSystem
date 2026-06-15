@@ -13,9 +13,9 @@ namespace GymManagementSystem.BLL.Services.Interfaces
 
         Task<bool> CreateMemberAsync(CreateMemberViewModel model, CancellationToken ct = default);
         Task<bool> UpdateMemberAsync(int memberId,MemberToUpdateViewModel model, CancellationToken ct = default);
-        Task<bool> DeleteMemberAsync(int id, CancellationToken ct = default);
-        Task<MemberViewModel?> GetMemberDetailesByIdAsync(int id, CancellationToken ct);
-        Task<MemberToUpdateViewModel?> GetMemberToUpdateAsync(int id, CancellationToken ct);
+        Task<bool> DeleteMemberAsync(int memberId, CancellationToken ct = default);
+        Task<MemberViewModel?> GetMemberDetailesByIdAsync(int memberId, CancellationToken ct);
+        Task<MemberToUpdateViewModel?> GetMemberToUpdateAsync(int memberId, CancellationToken ct);
         Task<HealthRecordViewModel?> GetMemberHealthRecordAsync(int memberId, CancellationToken ct);
     }
 }

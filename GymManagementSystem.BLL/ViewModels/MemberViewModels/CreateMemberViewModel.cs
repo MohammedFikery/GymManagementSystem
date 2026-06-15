@@ -32,7 +32,7 @@ namespace GymManagementSystem.BLL.ViewModels.MemberViewModels
 
         [Required(ErrorMessage = "Building Number Is Required")]
         [Range(1, 9000, ErrorMessage = "Building Number must be greater than 0")]
-        public int BuildingNumber { get; set; }
+        public string BuildingNumber { get; set; } = default!;
 
         [Required(ErrorMessage = "City Is Required")]
         [StringLength(100, MinimumLength = 2, ErrorMessage = "City must be between 2 and 100 characters")]

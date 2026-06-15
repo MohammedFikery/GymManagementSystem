@@ -28,40 +28,69 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                @{
+                    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                }
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
                         <li class="nav-item">
-                            <li class="nav-item">
-                                <a class="nav-link active px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" href="#">Members</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" href="#">Trainers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" href="#">Sessions</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" href="#">Plans</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" href="#">Memberships</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  px-3 py-2 mx-2 fw-bolder fs-5" aria-current="page" href="#">Sessions Schedule</a>
-                            </li>
-                            <li class="nav-item">
-                                <form asp-action="Logout" asp-controller="Account" method="post" class="d-inline">
-                                    <button type="submit"
-                                            class="btn btn-link nav-link px-3 py-2 mx-2 fw-bolder fs-5 text-black-alternative">
-                                        Logout
-                                    </button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
+                            <a class="nav-link px-3 py-2 mx-2 fw-bolder fs-5 @(currentController == "Home" ? "active" : "")"
+                                   asp-controller="Home" asp-action="Index"
+                                   aria-current="@(currentController == "Home" ? "page" : null)">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 mx-2 fw-bolder fs-5 @(currentController == "Member" ? "active" : "")"
+                                   asp-controller="Member" asp-action="Index"
+                                   aria-current="@(currentController == "Member" ? "page" : null)">
+                                Members
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 mx-2 fw-bolder fs-5 @(currentController == "Trainer" ? "active" : "")"
+                                   asp-controller="Trainer" asp-action="Index"
+                                   aria-current="@(currentController == "Trainer" ? "page" : null)">
+                                Trainers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 mx-2 fw-bolder fs-5 @(currentController == "Session" ? "active" : "")"
+                                   asp-controller="Session" asp-action="Index"
+                                   aria-current="@(currentController == "Session" ? "page" : null)">
+                                Sessions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 mx-2 fw-bolder fs-5 @(currentController == "Plan" ? "active" : "")"
+                                   asp-controller="Plan" asp-action="Index"
+                                   aria-current="@(currentController == "Plan" ? "page" : null)">
+                                Plans
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 mx-2 fw-bolder fs-5 @(currentController == "Membership" ? "active" : "")"
+                                   asp-controller="Membership" asp-action="Index"
+                                   aria-current="@(currentController == "Membership" ? "page" : null)">
+                                Memberships
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 py-2 mx-2 fw-bolder fs-5 @(currentController == "SessionSchedule" ? "active" : "")"
+                                   asp-controller="SessionSchedule" asp-action="Index"
+                                   aria-current="@(currentController == "SessionSchedule" ? "page" : null)">
+                                Sessions Schedule
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <form asp-action="Logout" asp-controller="Account" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-link nav-link px-3 py-2 mx-2 fw-bolder fs-5 text-black-alternative">
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
             </nav>
 

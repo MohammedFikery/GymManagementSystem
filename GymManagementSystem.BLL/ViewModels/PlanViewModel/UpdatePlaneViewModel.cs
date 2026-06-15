@@ -21,7 +21,7 @@ namespace GymManagementSystem.BLL.ViewModels.PlanViewModel
 
         [Required(ErrorMessage = "Price is required")]
         [Range(0.01, 10000, ErrorMessage = "Price must be greater than 0")]
-        public decimal Prlice { get; set; }
+        public decimal Price { get; set; }
 
     }
 }

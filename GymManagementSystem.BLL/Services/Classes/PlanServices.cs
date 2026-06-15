@@ -64,7 +64,7 @@ namespace GymManagementSystem.BLL.Services.Classes
                     PlanName = plan.Name,
                     Description = plan.Description ?? "",
                     DurationDays = plan.DurationDays,
-                    Prlice = plan.Price
+                    Price = plan.Price
                 };
         }
 
@@ -81,7 +81,7 @@ namespace GymManagementSystem.BLL.Services.Classes
                 return false;
             plan.Description = model.Description;
             plan.DurationDays = model.DurationDays;
-            plan.Price = model.Prlice;
+            plan.Price = model.Price;
             plan.UpdatedAt = DateTime.Now;
             _unitOFWork.GetRepository<Plan>().Update(plan);
             var result = await _unitOFWork.SaveChangesAsync();

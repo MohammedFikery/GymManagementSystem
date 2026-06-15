@@ -67,8 +67,30 @@ namespace GymManagementSystem.PL.Controllers
             }
             return View(result);
         }
-
         [HttpGet]
+        public async Task<IActionResult> EditMember(int id, CancellationToken ct)
+        {
+            var member = await _memberService.GetMemberToUpdateAsync(id, ct);
+            if (member is null)
+            {
+                TempData["ErrorMessage"] = "Member not found...!!!";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var model = new MemberToUpdateViewModel
+            {
+                Name = member.Name,
+                Photo = member.Photo,
+                Email = member.Email,
+                Phone = member.Phone,
+                BuildingNumber = member.BuildingNumber,
+                City = member.City,
+                Street = member.Street
+            };
+
+            return View(model);
+        }
+        [HttpPost]
         public async Task<IActionResult> EditMember(int id, MemberToUpdateViewModel model, CancellationToken ct)
         {
             if (ModelState.IsValid)

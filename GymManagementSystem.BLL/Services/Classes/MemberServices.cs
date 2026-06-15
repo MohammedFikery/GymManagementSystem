@@ -58,7 +58,7 @@ namespace GymManagementSystem.BLL.Services.Classes
 
                 Address = new Address
                 {
-                    BuildingNumber = model.BuildingNumber.ToString(),
+                    BuildingNumber = model.BuildingNumber,
                     Street = model.Street,
                     City = model.City
                 },
@@ -119,7 +119,7 @@ namespace GymManagementSystem.BLL.Services.Classes
                 Email = member.Email,
                 Phone = member.Phone,
                 Photo = member.Photo,
-                BuildingNumber = int.Parse(member.Address.BuildingNumber),
+                BuildingNumber = member.Address.BuildingNumber,
                 Street = member.Address.Street,
                 City = member.Address.City
             };
@@ -137,10 +137,10 @@ namespace GymManagementSystem.BLL.Services.Classes
 
             member.Email = model.Email;
             member.Phone = model.Phone;
-            member.Name = model.Name;
-            member.Address.BuildingNumber = model.BuildingNumber.ToString();
+            member.Address.BuildingNumber = model.BuildingNumber;
             member.Address.Street = model.Street;
             member.Address.City = model.City;
+            member.UpdatedAt = DateTime.Now;
 
             _unitOFWork.GetRepository<Member>().Update(member);
             var rowsAffected = await _unitOFWork.SaveChangesAsync(ct);

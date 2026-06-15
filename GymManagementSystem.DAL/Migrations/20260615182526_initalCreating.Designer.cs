@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymManagementSystem.DAL.Migrations
 {
     [DbContext(typeof(GymDbContext))]
-    [Migration("20260613082951_initalCreating")]
+    [Migration("20260615182526_initalCreating")]
     partial class initalCreating
     {
         /// <inheritdoc />
@@ -379,6 +379,109 @@ namespace GymManagementSystem.DAL.Migrations
                     b.ToTable("Plans", t =>
                         {
                             t.HasCheckConstraint("PlanDurationDaysCheck", "DurationDays Between 1 and 365");
+                        });
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Access to gym equipment during staffed hours",
+                            DurationDays = 1,
+                            IsActive = true,
+                            Name = "Basic Monthly",
+                            Price = 300.00m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Full gym access plus group classes",
+                            DurationDays = 30,
+                            IsActive = true,
+                            Name = "Standard Monthly",
+                            Price = 500.00m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Full access plus classes plus two PT sessions per month",
+                            DurationDays = 30,
+                            IsActive = true,
+                            Name = "Premium Monthly",
+                            Price = 900.00m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Standard access for three months with discount",
+                            DurationDays = 90,
+                            IsActive = true,
+                            Name = "Quarterly Plan",
+                            Price = 1350.00m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Standard access for six months with bigger discount",
+                            DurationDays = 180,
+                            IsActive = true,
+                            Name = "Semi-Annual Plan",
+                            Price = 2500.00m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Full access for twelve months at best value",
+                            DurationDays = 365,
+                            IsActive = true,
+                            Name = "Annual Plan",
+                            Price = 4500.00m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Discounted plan for students with valid ID",
+                            DurationDays = 30,
+                            IsActive = true,
+                            Name = "Student Plan",
+                            Price = 250.00m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Single-day access to gym facilities",
+                            DurationDays = 1,
+                            IsActive = true,
+                            Name = "Day Pass",
+                            Price = 50.00m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedAt = new DateTime(2025, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Legacy trial plan no longer offered",
+                            DurationDays = 14,
+                            IsActive = false,
+                            Name = "Old Trial Plan",
+                            Price = 100.00m,
+                            UpdatedAt = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedAt = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "All access including sauna pool and personal locker",
+                            DurationDays = 30,
+                            IsActive = true,
+                            Name = "VIP Plan",
+                            Price = 1500.00m
                         });
                 });
 

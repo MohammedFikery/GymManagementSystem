@@ -18,11 +18,8 @@ namespace GymManagementSystem.Controllers
         {
             _planServices = planServices;
         }
-
         public async Task<IActionResult> Index(CancellationToken ct = default)
         => View(await _planServices.GetAllPlansAsync(ct: ct));
-        
-
         public async Task<IActionResult> Details(int id, CancellationToken ct = default)
         {
             var plan = await _planServices.GetPlanByIdAsync(id, ct);
@@ -33,6 +30,26 @@ namespace GymManagementSystem.Controllers
             }
 
             return View(plan);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id, CancellationToken ct = default)
+        {
+            var plan = await _planServices.GetPlanByIdAsync(id, ct);
+            if (plan is null)
+            {
+                TempData["ErrorMessage"] = "Plan not found.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var model = new UpdatePlaneViewModel
+            {
+                PlanName = plan.Name,
+                Description = plan.Description,
+                DurationDays = plan.DurationDays,
+                Price = plan.Price
+            };
+
+            return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(int id,UpdatePlaneViewModel model, CancellationToken ct)

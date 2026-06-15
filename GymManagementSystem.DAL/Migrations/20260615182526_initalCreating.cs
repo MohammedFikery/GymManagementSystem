@@ -221,6 +221,31 @@ namespace GymManagementSystem.DAL.Migrations
                     { 5, "CrossFit", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Plans",
+                columns: new[] { "Id", "CreatedAt", "Description", "DurationDays", "IsActive", "Name", "Price", "UpdatedAt" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Access to gym equipment during staffed hours", 1, true, "Basic Monthly", 300.00m, null },
+                    { 2, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Full gym access plus group classes", 30, true, "Standard Monthly", 500.00m, null },
+                    { 3, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Full access plus classes plus two PT sessions per month", 30, true, "Premium Monthly", 900.00m, null },
+                    { 4, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Standard access for three months with discount", 90, true, "Quarterly Plan", 1350.00m, null },
+                    { 5, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Standard access for six months with bigger discount", 180, true, "Semi-Annual Plan", 2500.00m, null },
+                    { 6, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Full access for twelve months at best value", 365, true, "Annual Plan", 4500.00m, null },
+                    { 7, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Discounted plan for students with valid ID", 30, true, "Student Plan", 250.00m, null },
+                    { 8, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Single-day access to gym facilities", 1, true, "Day Pass", 50.00m, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Plans",
+                columns: new[] { "Id", "CreatedAt", "Description", "DurationDays", "Name", "Price", "UpdatedAt" },
+                values: new object[] { 9, new DateTime(2025, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Legacy trial plan no longer offered", 14, "Old Trial Plan", 100.00m, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+
+            migrationBuilder.InsertData(
+                table: "Plans",
+                columns: new[] { "Id", "CreatedAt", "Description", "DurationDays", "IsActive", "Name", "Price", "UpdatedAt" },
+                values: new object[] { 10, new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "All access including sauna pool and personal locker", 30, true, "VIP Plan", 1500.00m, null });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_SessionId",
                 table: "Bookings",

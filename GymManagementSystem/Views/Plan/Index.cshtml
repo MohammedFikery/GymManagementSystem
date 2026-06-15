@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GymManagementSystem.Models.Plan>
+﻿@model IEnumerable<PlanViewModel>
 @{
     ViewData["Title"] = "Plans";
 }
@@ -50,25 +50,21 @@
                                             </a>
 
                                             <div class="d-flex gap-2">
-                                                <a href="\Plans\Edit\1" class="btn btn-outline btn-sm flex-fill">
+                                                <a asp-controller="Plan" asp-action="Edit" asp-route-id="@plan.Id" class="btn btn-outline btn-sm flex-fill">
                                                     <i class="bi bi-pencil me-1"></i>Edit
                                                 </a>
-                                                <form href="\Plans\Activate\1" method="post" class="flex-fill">
-                                                    @* If Plan is Active put class text-danger if not text-success *@
+
+                                                <form asp-controller="Plan" asp-action="Activate" asp-route-id="@plan.Id" method="post" class="flex-fill">
+                                                    @Html.AntiForgeryToken()
                                                     <button type="submit" class="btn btn-outline btn-sm w-100 @(plan.IsActive ? "text-danger" : "text-success")">
                                                         @if (plan.IsActive)
-                                                            {@* Display If No Plan is inactive*@
-                                                                <i class="bi bi-x-circle me-1"> Deactivate </i> 
-                                                            }else
-                                                            {
-                                                        @* Display If No Plan is Active*@
-                                                        <i class="bi bi-check-circle me-1"> Activate </i>
-                                                                
-                                                            }
-                                                            
-                                                       
-
-
+                                                        {
+                                                            <i class="bi bi-x-circle me-1"></i> @:Deactivate
+                                                        }
+                                                        else
+                                                        {
+                                                            <i class="bi bi-check-circle me-1"></i> @:Activate
+                                                        }
                                                     </button>
                                                 </form>
                                             </div>
