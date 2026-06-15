@@ -28,6 +28,7 @@ namespace GymManagementSystem
             // Repository
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped<IMemberService,MemberServices>();
+            builder.Services.AddScoped<IPlanServices,PlanServices>();
             builder.Services.AddScoped<IUnitOFWork, UnitOfWork>();
             var app = builder.Build();
 

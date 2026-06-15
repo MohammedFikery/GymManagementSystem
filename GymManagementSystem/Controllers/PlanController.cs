@@ -1,4 +1,6 @@
-﻿using GymManagementSystem.DAL.Repository.Interfaces;
+﻿using GymManagementSystem.BLL.Services.Interfaces;
+using GymManagementSystem.BLL.ViewModels.PlanViewModel;
+using GymManagementSystem.DAL.Repository.Interfaces;
 using GymManagementSystem.DbContexts;
 using GymManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,29 +11,46 @@ namespace GymManagementSystem.Controllers
 {
     public class PlanController : Controller
     {
-        private readonly IGenericRepository<Plan> _planRepository; 
-        private readonly GymDbContext _db;                
 
-        // Constructor Injection
-        public PlanController(IGenericRepository<Plan> planRepository, GymDbContext db)
+        private readonly IPlanServices _planServices;
+
+        public PlanController(IPlanServices planServices)
         {
-            _planRepository = planRepository;
-            _db = db;
+            _planServices = planServices;
         }
 
         public async Task<IActionResult> Index(CancellationToken ct = default)
-        {
-            var plans = await _planRepository.GetAllAsync(ct: ct);
-            return View(plans);
-        }
+        => View(await _planServices.GetAllPlansAsync(ct: ct));
+        
 
         public async Task<IActionResult> Details(int id, CancellationToken ct = default)
         {
-            var plan = await _planRepository.GetByIdAsync(id, ct);
-            if (plan == null)
+            var plan = await _planServices.GetPlanByIdAsync(id, ct);
+            if (plan is null)
+            {
+                TempData["ErrorMessage"] = "Plan not found.";
                 return RedirectToAction("Index");
+            }
 
             return View(plan);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id,UpdatePlaneViewModel model, CancellationToken ct)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _planServices.upatePlanAsync(id, model, ct);
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Member created successfully!";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Failed to create member. Please try again.";
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
         }
 
     }
