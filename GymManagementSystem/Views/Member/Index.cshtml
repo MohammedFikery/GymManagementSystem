@@ -2,21 +2,22 @@
 <div class="container">
     <main role="main" class="pb-3">
 
-        @* Alert Messages *@
-        @* Show Success Message if Member is Created Successfully *@
-        @* <div id="Alert" class="alert alert-success alert-dismissible fade show">
-            <i class="bi bi-check-circle-fill me-2"></i>
-            Member Created Successfully
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div> *@
-        @* Show Error Message if Member Failed To Create *@
-        @* <div id="Alert" class="alert alert-danger alert-dismissible fade show">
-            <i class="bi bi-exclamation-triangle-fill me-2"></i>
-            Member Failed To Create
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div> *@
-
-
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div id="Alert" class="alert alert-success alert-dismissible fade show">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Member Created Successfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        else if (TempData["SuccessMessage"] != null)
+        {
+            <div id="Alert" class="alert alert-danger alert-dismissible fade show">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Member Failed To Create
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
         <div class="container">
             <header class="d-flex justify-content-end mt-5 mb-4 align-items-center">
                 <a asp-controller="Member" asp-action="Create" class="btn btn-fill fw-medium rounded-pill px-3 py-3"> + Add Member </a>

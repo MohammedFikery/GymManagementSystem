@@ -11,7 +11,7 @@ namespace GymManagementSystem.DAL.Models
     public class Trainer : GymUser
     {
         [MaxLength(200)]
-        public List<Specialty> Specialties { get; set; } = new List<Specialty>();
+        public List<Specialties> Specialties { get; set; } = new List<Specialties>();
         public ICollection<Session> Sessions { get; set; } = new List<Session>();
     }
 }

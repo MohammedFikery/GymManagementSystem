@@ -1,3 +1,5 @@
+using GymManagementSystem.BLL;
+using GymManagementSystem.BLL.Mapping;
 using GymManagementSystem.BLL.Services.Classes;
 using GymManagementSystem.BLL.Services.Interfaces;
 using GymManagementSystem.DAL.Repository.Classes;
@@ -25,11 +27,19 @@ namespace GymManagementSystem
                 );
             });
 
-            // Repository
+            #region Repository
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            builder.Services.AddScoped<IMemberService,MemberServices>();
-            builder.Services.AddScoped<IPlanServices,PlanServices>();
-            builder.Services.AddScoped<IUnitOFWork, UnitOfWork>();
+            builder.Services.AddScoped<IMemberService, MemberServices>();
+            builder.Services.AddScoped<IPlanServices, PlanServices>();
+            builder.Services.AddScoped<ITrainerServices, TrainerServices>();
+            builder.Services.AddScoped<IUnitOFWork, UnitOfWork>(); 
+            #endregion
+
+            #region auto Mapper
+            builder.Services.AddAutoMapper(m => m.AddProfile(new MemberMappingProfile()));
+            builder.Services.AddAutoMapper(m => m.AddProfile(new TrainerMappingProfile()));
+            builder.Services.AddAutoMapper(m => m.AddProfile(new PlanMappingProfile())); 
+            #endregion
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

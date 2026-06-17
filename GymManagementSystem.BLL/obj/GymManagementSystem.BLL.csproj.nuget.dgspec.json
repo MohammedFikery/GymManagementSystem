@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {}
+    "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {}
   },
   "projects": {
-    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {
+    "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
+        "projectUniqueName": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
         "projectName": "GymManagementSystem.BLL",
-        "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
-        "packagesPath": "C:\\Users\\MohammedFekry\\.nuget\\packages\\",
-        "outputPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.BLL\\obj\\",
+        "projectPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj",
+        "packagesPath": "C:\\Users\\MF\\.nuget\\packages\\",
+        "outputPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MohammedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MF\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -30,10 +30,11 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
-                "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj"
+              "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
+                "projectPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj"
               }
             }
           }
@@ -48,11 +49,18 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[16.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -69,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -347,20 +355,20 @@
         }
       }
     },
-    "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
+    "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+        "projectUniqueName": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
         "projectName": "GymManagementSystem.DAL",
-        "projectPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
-        "packagesPath": "C:\\Users\\MohammedFekry\\.nuget\\packages\\",
-        "outputPath": "D:\\MyApplications\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
+        "projectPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+        "packagesPath": "C:\\Users\\MF\\.nuget\\packages\\",
+        "outputPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MohammedFekry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MF\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -373,6 +381,7 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -387,10 +396,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
@@ -426,7 +436,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
