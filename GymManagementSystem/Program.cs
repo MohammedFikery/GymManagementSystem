@@ -32,13 +32,16 @@ namespace GymManagementSystem
             builder.Services.AddScoped<IMemberService, MemberServices>();
             builder.Services.AddScoped<IPlanServices, PlanServices>();
             builder.Services.AddScoped<ITrainerServices, TrainerServices>();
+            builder.Services.AddScoped<ISessionServices, SessionsServices>();
+            builder.Services.AddScoped<ISessionRepository, SessionRepository>();
             builder.Services.AddScoped<IUnitOFWork, UnitOfWork>(); 
             #endregion
 
             #region auto Mapper
             builder.Services.AddAutoMapper(m => m.AddProfile(new MemberMappingProfile()));
             builder.Services.AddAutoMapper(m => m.AddProfile(new TrainerMappingProfile()));
-            builder.Services.AddAutoMapper(m => m.AddProfile(new PlanMappingProfile())); 
+            builder.Services.AddAutoMapper(m => m.AddProfile(new PlanMappingProfile()));
+            builder.Services.AddAutoMapper(m => m.AddProfile(new SessionMappingProfile()));
             #endregion
             var app = builder.Build();
 

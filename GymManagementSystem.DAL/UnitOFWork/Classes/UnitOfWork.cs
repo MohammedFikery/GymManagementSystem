@@ -13,11 +13,14 @@ namespace GymManagementSystem.DAL.UnitOFWork.Classes
     {
         private readonly Dictionary<string, object> _repositories = [];
         private readonly GymDbContext _dbContext;
-
-        public UnitOfWork(GymDbContext dbContext)
+        public ISessionRepository SessionRepository { get; }
+         public UnitOfWork(GymDbContext dbContext,ISessionRepository sessionRepository)
         {
             _dbContext = dbContext;
+            SessionRepository = sessionRepository;
         }
+
+
         public IGenericRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseEntity, new()
         {
             var entityType = typeof(TEntity).Name;

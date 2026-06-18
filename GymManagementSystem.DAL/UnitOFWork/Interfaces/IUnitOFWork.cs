@@ -12,5 +12,7 @@ namespace GymManagementSystem.DAL.UnitOFWork.Interfaces
 
         Task<int> SaveChangesAsync(CancellationToken ct=default);
 
+        public ISessionRepository SessionRepository { get; }
+
     }
 }
