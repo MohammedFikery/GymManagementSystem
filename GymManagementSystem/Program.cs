@@ -1,4 +1,4 @@
-using GymManagementSystem.BLL;
+using GymManagementSystem.BLL.AttachmentServices;
 using GymManagementSystem.BLL.Mapping;
 using GymManagementSystem.BLL.Services.Classes;
 using GymManagementSystem.BLL.Services.Interfaces;
@@ -34,6 +34,7 @@ namespace GymManagementSystem
             builder.Services.AddScoped<ITrainerServices, TrainerServices>();
             builder.Services.AddScoped<ISessionServices, SessionsServices>();
             builder.Services.AddScoped<ISessionRepository, SessionRepository>();
+            builder.Services.AddScoped<IAttachmentServices, AttachmentServices>();
             builder.Services.AddScoped<IUnitOFWork, UnitOfWork>(); 
             #endregion
 

@@ -1,4 +1,5 @@
-﻿using GymManagementSystem.BLL.Services.Interfaces;
+﻿using GymManagementSystem.BLL.AttachmentServices;
+using GymManagementSystem.BLL.Services.Interfaces;
 using GymManagementSystem.BLL.ViewModels.MemberViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,10 +8,12 @@ namespace GymManagementSystem.PL.Controllers
     public class MemberController : Controller
     {
         private readonly IMemberService _memberService;
+        private readonly IAttachmentServices _attachmentServices;
 
-        public MemberController(IMemberService memberService)
+        public MemberController(IMemberService memberService, IAttachmentServices attachmentServices)
         {
             _memberService = memberService;
+            _attachmentServices = attachmentServices;
         }
         public async Task<IActionResult> Index(CancellationToken ct)
         {
@@ -28,21 +31,17 @@ namespace GymManagementSystem.PL.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateMemberViewModel model, CancellationToken ct)
         {
-            if (ModelState.IsValid)
-            {
-                var result = await _memberService.CreateMemberAsync(model, ct);
-                if (result)
-                {
-                    TempData["SuccessMessage"] = "Member created successfully!";
-                }
-                else
-                {
-                    TempData["ErrorMessage"] = "Failed to create member. Please try again.";
-                }
-                return RedirectToAction(nameof(Index));
+            if (!ModelState.IsValid)
+                return View(model);
 
-            }
-            return View(model);
+            var result = await _memberService.CreateMemberAsync(model, ct);
+
+            if (result.success)
+                TempData["SuccessMessage"] = "Member created successfully!";
+            else
+                TempData["ErrorMessage"] = result.error;
+
+            return RedirectToAction(nameof(Index));
         }
         [HttpGet]
         public async Task<IActionResult> MemberDetails(int id, CancellationToken ct)
@@ -93,23 +92,14 @@ namespace GymManagementSystem.PL.Controllers
         [HttpPost]
         public async Task<IActionResult> EditMember(int id, MemberToUpdateViewModel model, CancellationToken ct)
         {
-            if (ModelState.IsValid)
-            {
-                var result = await _memberService.UpdateMemberAsync(id, model, ct);
-                if (result)
-                {
-                    TempData["SuccessMessage"] = "Member created successfully!";
-                }
-                else
-                {
-                    TempData["ErrorMessage"] = "Failed to create member. Please try again.";
-                }
-                return RedirectToAction(nameof(Index));
+            if (!ModelState.IsValid) return View(model); 
+            var result = await _memberService.UpdateMemberAsync(id, model, ct);
+            if (result.success)
+                TempData["SuccessMessage"] = "Member Updated successfully!";
+            else
+                TempData["ErrorMessage"] = result.error;
 
-            }
-
-
-            return View(model);
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
@@ -122,22 +112,27 @@ namespace GymManagementSystem.PL.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return View();
+            return View(result);
 
         }
         [HttpPost]
-        public IActionResult DeleteConfirmed(int id, CancellationToken ct)
+        public async Task<IActionResult> DeleteConfirmed(int id, CancellationToken ct)
         {
-            var result = _memberService.DeleteMemberAsync(id, ct);
-            if (result.Result)
-            {
+            var result = await _memberService.DeleteMemberAsync(id, ct);
+
+            if (result.success)
                 TempData["SuccessMessage"] = "Member deleted successfully!";
-            }
             else
-            {
-                TempData["ErrorMessage"] = "Failed to delete member. Please try again.";
-            }
+                TempData["ErrorMessage"] = result.error; // هيظهر "Cannot delete..." بدل رسالة عامة
+
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet("member-photo/{fileName}")]
+        public IActionResult GetMemberPhoto(string fileName)
+        {
+            var file = _attachmentServices.GetFile(fileName, "MembersPhotos");
+            if (file is null) return NotFound();
+            return File(file.Value.stream, file.Value.contentType);
         }
     }
 }

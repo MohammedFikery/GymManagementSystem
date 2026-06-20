@@ -1,12 +1,7 @@
-﻿using GymManagementSystem.BLL.Services.Classes;
-using GymManagementSystem.BLL.Services.Interfaces;
+﻿using GymManagementSystem.BLL.Services.Interfaces;
 using GymManagementSystem.BLL.ViewModels.PlanViewModel;
-using GymManagementSystem.DAL.Repository.Interfaces;
-using GymManagementSystem.DbContexts;
-using GymManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace GymManagementSystem.Controllers
 {
@@ -45,7 +40,7 @@ namespace GymManagementSystem.Controllers
             var model = new UpdatePlaneViewModel
             {
                 PlanName = plan.Name,
-                Description = plan.Description,
+                Description = plan.Description??"",
                 DurationDays = plan.DurationDays,
                 Price = plan.Price
             };

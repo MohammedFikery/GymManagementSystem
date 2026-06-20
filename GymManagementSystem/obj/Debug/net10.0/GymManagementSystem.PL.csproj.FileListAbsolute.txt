@@ -449,3 +449,4 @@ D:\M_Fikery\GymManagementSystem\GymManagementSystem\obj\Debug\net10.0\GymManagem
 D:\M_Fikery\GymManagementSystem\GymManagementSystem\obj\Debug\net10.0\GymManagementSystem.PL.genruntimeconfig.cache
 D:\M_Fikery\GymManagementSystem\GymManagementSystem\obj\Debug\net10.0\ref\GymManagementSystem.PL.dll
 D:\M_Fikery\GymManagementSystem\GymManagementSystem\bin\Debug\net10.0\AutoMapper.dll
+D:\MyApplications\GymManagementSystem\GymManagementSystem\bin\Debug\net10.0\AutoMapper.dll

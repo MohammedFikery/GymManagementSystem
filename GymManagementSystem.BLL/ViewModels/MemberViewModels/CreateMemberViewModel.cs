@@ -1,11 +1,16 @@
 ﻿using GymManagementSystem.BLL.ViewModels.HealthRecordViewModels;
 using GymManagementSystem.DAL.Models.Enums;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
 namespace GymManagementSystem.BLL.ViewModels.MemberViewModels
 {
     public class CreateMemberViewModel
     {
+        
+        [Required(ErrorMessage = "Profile Image Is Required")]
+        [Display(Name = "Profile Photo")]
+        public IFormFile PhotoFile { get; set; }=default!;
 
         [Required(ErrorMessage = "Name Is Required")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Name can only contain letters and spaces")]
@@ -30,17 +35,17 @@ namespace GymManagementSystem.BLL.ViewModels.MemberViewModels
         [Required(ErrorMessage = "Gender is required")]
         public Gender Gender { get; set; }
 
-        [Required(ErrorMessage = "Building Number Is Required")]
-        [Range(1, 9000, ErrorMessage = "Building Number must be greater than 0")]
+        [Required(ErrorMessage = "BuildingNumber Is Required")]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "BuildingNumber must be between 2 and 20 characters")]
         public string BuildingNumber { get; set; } = default!;
 
         [Required(ErrorMessage = "City Is Required")]
-        [StringLength(100, MinimumLength = 2, ErrorMessage = "City must be between 2 and 100 characters")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "City must be between 2 and 30 characters")]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "City can only contain letters and spaces")]
         public string City { get; set; } = default!;
 
         [Required(ErrorMessage = "Street Is Required")]
-        [StringLength(150, MinimumLength = 2, ErrorMessage = "Street must be between 2 and 150 characters")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "Street must be between 2 and 30 characters")]
         [RegularExpression(@"^[a-zA-Z0-9\s]+$", ErrorMessage = "Street can only contain letters, numbers, and spaces")]
         public string Street { get; set; } = default!;
 
