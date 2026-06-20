@@ -2,18 +2,20 @@ using GymManagementSystem.BLL.AttachmentServices;
 using GymManagementSystem.BLL.Mapping;
 using GymManagementSystem.BLL.Services.Classes;
 using GymManagementSystem.BLL.Services.Interfaces;
+using GymManagementSystem.DAL.DataSeading;
 using GymManagementSystem.DAL.Repository.Classes;
 using GymManagementSystem.DAL.Repository.Interfaces;
 using GymManagementSystem.DAL.UnitOFWork.Classes;
 using GymManagementSystem.DAL.UnitOFWork.Interfaces;
 using GymManagementSystem.DbContexts;
+using GymManagementSystem.PL;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymManagementSystem
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +37,8 @@ namespace GymManagementSystem
             builder.Services.AddScoped<ISessionServices, SessionsServices>();
             builder.Services.AddScoped<ISessionRepository, SessionRepository>();
             builder.Services.AddScoped<IAttachmentServices, AttachmentServices>();
-            builder.Services.AddScoped<IUnitOFWork, UnitOfWork>(); 
+            builder.Services.AddScoped<IUnitOFWork, UnitOfWork>();
+
             #endregion
 
             #region auto Mapper
@@ -45,7 +48,7 @@ namespace GymManagementSystem
             builder.Services.AddAutoMapper(m => m.AddProfile(new SessionMappingProfile()));
             #endregion
             var app = builder.Build();
-
+            await app.MigrateAndSeedDatabaseAsync();
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {

@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace GymManagementSystem.BLL.ViewModels.PlanViewModel
 {
-    public class UpdatePlaneViewModel
+    public class UpdatePlanViewModel
     {
 
         public string PlanName { get; set; } = default!;

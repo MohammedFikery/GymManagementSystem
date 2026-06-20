@@ -70,7 +70,7 @@ csharp_style_expression_bodied_methods = when_on_single_line:suggestion
 csharp_style_expression_bodied_accessors = true:suggestion
 
 # ===== Modern C# preferences =====
-csharp_prefer_braces = true:warning
+csharp_prefer_braces = when_multiline:suggestion
 csharp_style_namespace_declarations = file_scoped:warning
 dotnet_style_readonly_field = true:warning
 dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion

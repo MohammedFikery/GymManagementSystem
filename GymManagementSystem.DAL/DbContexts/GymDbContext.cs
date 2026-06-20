@@ -1,4 +1,4 @@
-﻿
+
 using GymManagementSystem.DAL.Configurations;
 using GymManagementSystem.DAL.Models;
 using GymManagementSystem.Models;
@@ -36,9 +36,6 @@ namespace GymManagementSystem.DbContexts
             modelBuilder.ApplyConfiguration(new SessionConfiguration());
             modelBuilder.ApplyConfiguration(new MembershipConfiguration());
             modelBuilder.ApplyConfiguration(new BookingConfiguration());
-
-            modelBuilder.Entity<Plan>().HasQueryFilter(p => p.IsActive);
-
             modelBuilder.Entity<Session>().ToTable(t => t.HasCheckConstraint("CK_Session_Dates", "[EndDate] > [StartDate]"));
 
             modelBuilder.Entity<Session>()
