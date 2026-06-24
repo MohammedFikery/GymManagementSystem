@@ -38,4 +38,6 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
     }
     public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default) => await _context.Set<TEntity>().AnyAsync(predicate, ct);
     public async Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default)=> await _context.Set<TEntity>().FirstOrDefaultAsync(predicate, ct);
+    public Task<int> GetCountAsync(Expression<Func<TEntity, bool>>? predicate = null,CancellationToken ct = default)
+    => predicate is null? _dbSet.CountAsync(ct): _dbSet.CountAsync(predicate, ct);
 }
