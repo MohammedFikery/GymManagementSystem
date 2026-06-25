@@ -1,8 +1,11 @@
 using GymManagementSystem.BLL.Services.Interfaces;
 using GymManagementSystem.BLL.ViewModels.Trainer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymManagementSystem.PL.Controllers;
+
+[Authorize]
 
 public class TrainerController : Controller
 {

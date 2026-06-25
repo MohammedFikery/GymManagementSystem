@@ -3,13 +3,16 @@ using GymManagementSystem.BLL.Mapping;
 using GymManagementSystem.BLL.Services.Classes;
 using GymManagementSystem.BLL.Services.Interfaces;
 using GymManagementSystem.DAL.DataSeading;
+using GymManagementSystem.DAL.Models.Enums;
 using GymManagementSystem.DAL.Repository.Classes;
 using GymManagementSystem.DAL.Repository.Interfaces;
 using GymManagementSystem.DAL.UnitOFWork.Classes;
 using GymManagementSystem.DAL.UnitOFWork.Interfaces;
 using GymManagementSystem.DbContexts;
 using GymManagementSystem.PL;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace GymManagementSystem;
 
@@ -39,7 +42,19 @@ public class Program
         builder.Services.AddScoped<IAttachmentServices, AttachmentServices>();
         builder.Services.AddScoped<IAnalyticsServices, AnalyticsServices>();   
         builder.Services.AddScoped<IUnitOFWork, UnitOfWork>();
-
+        builder.Services.AddIdentity<AppUser, IdentityRole>(config =>
+        {
+            //config.Password.RequireUppercase = true;
+            config.User.RequireUniqueEmail = true;
+            config.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+            config.Lockout.MaxFailedAccessAttempts = 5;
+        }).AddEntityFrameworkStores<GymDbContext>() ;
+        builder.Services.ConfigureApplicationCookie(options =>
+        {
+            //options.LoginPath = "/Account/Login";                 ****Default****
+            //options.AccessDeniedPath = "/Account/AccessDenied";   ****Default****
+            options.AccessDeniedPath = "/Account/AccessDenied";
+        });
         #endregion
 
         #region auto Mapper
@@ -60,13 +75,13 @@ public class Program
 
         app.UseHttpsRedirection();
         app.UseRouting();
-
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapStaticAssets();
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}")
+            pattern: "{controller=Account}/{action=Login}/{id?}")
             .WithStaticAssets();
 
         app.Run();

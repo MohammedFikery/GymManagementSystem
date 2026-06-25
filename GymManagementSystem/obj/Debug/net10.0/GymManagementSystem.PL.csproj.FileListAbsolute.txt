@@ -451,3 +451,4 @@ D:\M_Fikery\GymManagementSystem\GymManagementSystem\obj\Debug\net10.0\ref\GymMan
 D:\M_Fikery\GymManagementSystem\GymManagementSystem\bin\Debug\net10.0\AutoMapper.dll
 D:\MyApplications\GymManagementSystem\GymManagementSystem\bin\Debug\net10.0\AutoMapper.dll
 D:\M_Fikery\GymManagementSystem\GymManagementSystem\obj\Debug\net10.0\compressed\caohy74jb3-{0}-hby4qdiqxa-hby4qdiqxa.gz
+D:\M_Fikery\GymManagementSystem\GymManagementSystem\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
