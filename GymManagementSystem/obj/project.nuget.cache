@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6wSJRYuRWZ0=",
+  "dgSpecHash": "Z6py5GJIeJ8=",
   "success": true,
-  "projectFilePath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.PL.csproj",
+  "projectFilePath": "D:\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.PL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MF\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\MF\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",

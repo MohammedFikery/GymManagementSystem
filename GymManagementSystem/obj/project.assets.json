@@ -1227,11 +1227,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.PL.csproj",
+      "projectUniqueName": "D:\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.PL.csproj",
       "projectName": "GymManagementSystem.PL",
-      "projectPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.PL.csproj",
+      "projectPath": "D:\\GymManagementSystem\\GymManagementSystem\\GymManagementSystem.PL.csproj",
       "packagesPath": "C:\\Users\\MF\\.nuget\\packages\\",
-      "outputPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem\\obj\\",
+      "outputPath": "D:\\GymManagementSystem\\GymManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1253,8 +1253,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {
-              "projectPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj"
+            "D:\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj": {
+              "projectPath": "D:\\GymManagementSystem\\GymManagementSystem.BLL\\GymManagementSystem.BLL.csproj"
             }
           }
         }

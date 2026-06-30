@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {}
+    "D:\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {}
   },
   "projects": {
-    "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
+    "D:\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+        "projectUniqueName": "D:\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
         "projectName": "GymManagementSystem.DAL",
-        "projectPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
+        "projectPath": "D:\\GymManagementSystem\\GymManagementSystem.DAL\\GymManagementSystem.DAL.csproj",
         "packagesPath": "C:\\Users\\MF\\.nuget\\packages\\",
-        "outputPath": "D:\\M_Fikery\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
+        "outputPath": "D:\\GymManagementSystem\\GymManagementSystem.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
